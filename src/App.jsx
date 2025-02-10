@@ -33,9 +33,10 @@ function App() {
        </div>
      </div>
     
-
+    
     <div className='right-frame'>
-
+      
+      <div className='chat-container-wrapper'>
       <div className='chat-container'>
         
         <div className='bot-response'>This is the bot response</div>
@@ -63,6 +64,7 @@ function App() {
                    with  \n
         </div>
 
+      </div>
       </div>
       
       <div className='input-text-container'>
