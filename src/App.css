@@ -1,0 +1,157 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.frame {
+  width: 100%;
+  background-color: white;
+  display: flex;
+}
+
+.left-frame {
+  width: 250px;
+  padding-top: 20px;
+  background-color:#f9f9f9;
+}
+
+.sidebar {
+  
+  flex-direction: column;
+  display: flex;
+}
+
+.chat-container {
+  flex-grow: 1;  
+  /*border: 1px solid black; /* Border width, style, and color */
+  background-color: white;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+  gap: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.input-text-container {
+  height: 115px;
+  min-height: 115px;
+  max-height: 115px;
+  width:80%;
+  margin: auto;
+  margin-bottom: 20px;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 25px;
+  background-color: white;
+  position: relative;
+  flex-direction: row;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0.1, 0.1); /* Subtle shadow */
+}
+
+#send-button {
+  
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+#send-button:hover {
+  background-color: rgb(64, 62, 62); /* Darker background color on hover or focus */
+  outline: none; /* Ensure no border appears */
+  border: none;
+}
+#send-button:hover svg {
+  color: white; /* Make sure the icon turns white */
+}
+.input-field {
+  margin: 5px auto;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  /*width: 85%; /* Adjust width as needed */
+  min-height: 50px; /* Set minimum height */
+  max-height: 200px; /* Set maximum height */
+  resize: none; /* Disable manual resizing */
+  overflow-y: auto; /* Allow scrolling when content exceeds max height */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  line-height: 1.5; /* Line spacing for proper growth */
+  border: 0;
+  outline: none;
+}
+.right-frame {
+  flex-grow: 1;
+  /*border: 1px solid black; /* Border width, style, and color */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+
+
+#root {
+  width: 100%;
+  height: 100%;
+  border: 1x solid blue; /* Border width, style, and color */
+  text-align: center;
+  display: flex;
+}
+
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center; /* Horizontally centers */
+  align-items: center;    /* Vertically centers (optional) */
+  height: 100vh;          /* Optional: Full viewport height */
+  margin: 0;              /* Remove default browser margins */
+  gap: 20px;
+}
+
+
+.user-message, .bot-response {
+  white-space: pre-wrap; /* Preserves new lines */
+  overflow-wrap: anywhere; /* Ensures wrapping at spaces */
+  word-break: normal; /* Prevents mid-word breaking */
+}
+
+.bot-response {
+
+  align-self: flex-start;
+  max-width: 100%;
+  text-align: left;
+}
+
+
+.user-message {
+  text-align: left;
+  align-self: flex-end;
+  max-width: 60%;
+  background: #f3f3f3;
+  border-radius: 25px; 
+  overflow-wrap: anywhere; /* Wraps at spaces but does NOT split words */
+  white-space: normal; /* Allows wrapping */
+  word-break: normal; /* Prevents mid-word splitting */
+  padding: 10px 10px;
+  
+}
+  
