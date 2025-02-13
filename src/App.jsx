@@ -2,15 +2,36 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'; 
+import { faArrowUp, faArrowUpFromBracket, faAngleDown } from '@fortawesome/free-solid-svg-icons'; 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 import './App.css'
 
 //const element = <FontAwesomeIcon icon={byPrefixAndName.fas['house']} />
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tentativePhone, setTentativePhone] = useState("")
+  const [phone, setPhone] = useState("")
+
+
+  function handleTentativePhoneChange(event) {
+     
+     setTentativePhone(event.target.value);   
+
+  }
+
+  function handlePhoneChangeClick() {
+        setPhone(tentativePhone);
+  }
+  
+
+  function ChatElement(props) {
+      
+      return(
+        <div className={props.type}>{props.content}</div>
+      );
+  }
 
   return (
    // a main div
@@ -22,9 +43,16 @@ function App() {
     <div className='left-frame'> 
 
     <div id='phone-number-container'>
-      <p>Phone number to simulate</p>
-      <input id='phone-number-input' type="text" />
-      <button id='phone-button'>Set phone</button>
+      <p> <b>Number being used </b></p>
+      <div id='current-number-container'>
+           <div id='current-number'> {phone}</div>
+      </div>
+      <input id='phone-number-input' 
+             placeholder='Enter phone' 
+             type="text" 
+             value={tentativePhone} 
+             onChange={handleTentativePhoneChange}/>
+      <button id='phone-button' onClick={handlePhoneChangeClick}>Change Number</button>
     </div>
 
       <div className="sidebar">
@@ -37,34 +65,30 @@ function App() {
     
     
     <div className='right-frame'>
+
+      <div className='right-frame-top-bar'>  
+         
+        <div className='model-drop-down-container'>
+        <div className='select-model-drop-down'> ChatGPT 4o  </div>
+        <FontAwesomeIcon id='model-drop-down-icon' icon={faAngleDown} /> 
+        </div>
+        <div className='user-icon-n-share'>
+        <div className='share-button-container'><button id='share-button'><FontAwesomeIcon className='share-icon' icon={faArrowUpFromBracket} /> Share</button></div>
+        <div className='user-icon'>FN</div>
+        </div>
+        
+        
+         </div>
       
       <div className='chat-container-wrapper'>
       <div className='chat-container'>
         
-        <div className='bot-response'>This is the bot response</div>
-        <div className='user-message'> This is a user message</div>
-        <div className='bot-response'> this is a longer message from the bot this is a longer
-          message from the bot this is a longer message from the bot this is a 
-          this is along er message from the both this is a longer mes
-          sage from the bot
-           this is a longer message from the bot longer message from the bot this is a longerme
-        </div>
-        <div className='user-message'> asdfja;sdlfkja;lskdf
+        <ChatElement type="bot-response" content="This is a bot response"/>
+        <ChatElement type="user-message" content="asdfja;sdlfkja;lskdf
           ;alskdfj;alsdkfj;alsdkfjas;dlfka;dslkfj;alskdfj;alsdkfj;alskdjfa;sldkjf;alsdkfjas
           ;alsdkfj;alsdkfjkfjdkaj;lkjdf;laksdjf;laksdfj;aljkf;kdj;dlkjf;alksdjf;laksdjf;laksdjf
-          ;aslkdfj;dlkjf;alskdjf;alskdjf;lkjfdka;kfjdk;fja;lksdf;lkasdjf;lsdkj
-        </div>
-        <div className='bot-response'> again a shoddddddddd
-          ddddddfasdkjalkj dkdkdks s ksks ks sk kss
-        
-          ot</div>
-        <div className='user-message'> another short message from the user</div>
-        <div className='bot-response'> this
-                  is 
-                   a 
-                   message \n
-                   with  \n
-        </div>
+          ;aslkdfj;dlkjf;alskdjf;alskdjf;lkjfdka;kfjdk;fja;lksdf;lkasdjf;lsdkj" />
+      
 
       </div>
       </div>
