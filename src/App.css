@@ -19,10 +19,27 @@
   background-color:#f9f9f9;
 }
 
+#phone-number-input{
+
+   background-color: white;
+   color: black;
+   height: 5vh;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   font-size: medium;
+}
+
+#phone-button {
+
+  color: black;
+  background-color: white;
+}
+
 .sidebar {
   
   flex-direction: column;
   display: flex;
+  margin-top: 100px;
 }
 
 
@@ -104,6 +121,8 @@
   line-height: 1.5; /* Line spacing for proper growth */
   border: 0;
   outline: none;
+  background-color: white;
+  color: black;
 }
 .right-frame {
   flex-grow: 1;
@@ -111,6 +130,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  font-size: large;
  
 
 }
@@ -134,6 +154,7 @@ body {
   height: 100vh;          /* Optional: Full viewport height */
   margin: 0;              /* Remove default browser margins */
   gap: 20px;
+  color: black;
 }
 
 

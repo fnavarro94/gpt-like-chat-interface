@@ -20,9 +20,11 @@ function App() {
     
  
     <div className='left-frame'> 
+
     <div id='phone-number-container'>
-      <input type="text" />
-      <button>Set phone</button>
+      <p>Phone number to simulate</p>
+      <input id='phone-number-input' type="text" />
+      <button id='phone-button'>Set phone</button>
     </div>
 
       <div className="sidebar">
