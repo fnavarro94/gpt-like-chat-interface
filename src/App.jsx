@@ -55,12 +55,7 @@ function App() {
       <button id='phone-button' onClick={handlePhoneChangeClick}>Change Number</button>
     </div>
 
-      <div className="sidebar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-       </div>
+    
      </div>
     
     
