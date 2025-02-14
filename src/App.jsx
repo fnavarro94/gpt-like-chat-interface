@@ -96,11 +96,12 @@ function App() {
         console.log(conversationHistory)
   }
   
-  function makeConversationElement(obj) {
+  function makeConversationElement(obj, index) {
 
        return (
           
            <ChatElement  
+               key={index}
                type={obj.role === "user" ? "user-message": "bot-response" }
                content={obj.text}
                />
@@ -159,7 +160,7 @@ function App() {
       <div className='chat-container-wrapper' ref={chatContainerRef}>
       <div className='chat-container'>
         
-        {conversationHistory.map(makeConversationElement)}
+        {conversationHistory.map((obj, index) => makeConversationElement(obj, index))}
         {/* <ChatElement type="bot-response" content="This is a bot response"/>
         <ChatElement type="user-message" content="asdfja;sdlfkja;lskdf
           ;alskdfj;alsdkfj;alsdkfjas;dlfka;dslkfj;alskdfj;alsdkfj;alskdjfa;sldkjf;alsdkfjas
